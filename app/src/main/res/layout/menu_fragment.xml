@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:text="@string/game_title"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/newGameBtn"
+        android:text="@string/new_game"
+        style="@style/MenuButton"/>
+
+    <Button
+        android:id="@+id/settingsBtn"
+        android:text="@string/settings"
+        style="@style/MenuButton"/>
+
+    <Button
+        android:id="@+id/tutorialBtn"
+        android:text="@string/tutorial"
+        style="@style/MenuButton"/>
+
+    <Button
+        android:id="@+id/highScoresBtn"
+        android:text="@string/high_scores"
+        style="@style/MenuButton"/>
+
+</LinearLayout>
