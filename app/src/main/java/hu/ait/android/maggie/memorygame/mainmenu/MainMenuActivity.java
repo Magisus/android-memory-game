@@ -1,10 +1,11 @@
-package hu.ait.android.maggie.memorygame;
+package hu.ait.android.maggie.memorygame.mainmenu;
 
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.mainmenu.MainMenuFragment;
 
 
 public class MainMenuActivity extends FragmentActivity {
