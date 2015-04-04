@@ -1,13 +1,13 @@
 package hu.ait.android.maggie.memorygame;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainMenuActivity extends ActionBarActivity {
+public class MainMenuActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
