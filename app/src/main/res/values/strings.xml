@@ -9,7 +9,7 @@
     <string name="tutorial">Tutorial</string>
     <string name="high_scores">High Scores</string>
     <string name="title_activity_game_screen">Memory Game</string>
-    <string name="easy_text">Easy (5x5)</string>
-    <string name="medium_text">Medium (7x7)</string>
-    <string name="hard_text">Hard (9x9)</string>
+    <string name="easy_text">Easy (4x4)</string>
+    <string name="medium_text">Medium (6x6)</string>
+    <string name="hard_text">Hard (8x8)</string>
 </resources>

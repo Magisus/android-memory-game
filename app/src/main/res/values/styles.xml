@@ -17,4 +17,11 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="EasyCard" parent="android:Widget.Button">
+        <item name="android:background">@drawable/easy_button</item>
+    </style>
+
+    <color name="light_purple">#DAB0E4</color>
+    <color name="dark_purple">#6A1080</color>
+
 </resources>
