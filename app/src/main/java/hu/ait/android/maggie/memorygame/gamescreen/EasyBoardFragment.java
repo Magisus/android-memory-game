@@ -60,8 +60,9 @@ public class EasyBoardFragment extends Fragment {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         //show card face
+                        button.setBackground(res.getDrawable(R.drawable.med_button_back));
                         //disable so the user can't re-flip cards
-                        //button.setEnabled(false);
+                        button.setEnabled(false);
                     } else {
                         button.setBackground(res.getDrawable(R.drawable.easy_button_back));
                         button.setEnabled(true);
@@ -69,6 +70,8 @@ public class EasyBoardFragment extends Fragment {
                 }
             });
             grid.addView(button, cardWidth, cardWidth);
+            button.toggle();
+            button.toggle();
         }
         return rootView;
     }
