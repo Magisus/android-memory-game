@@ -12,16 +12,15 @@
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/menu_button</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="EasyCard" parent="android:Widget.Button">
-        <item name="android:background">@drawable/easy_button</item>
-    </style>
-
     <color name="light_purple">#DAB0E4</color>
     <color name="dark_purple">#6A1080</color>
+    <color name="light_blue">#48BDA6</color>
+    <color name="dark_blue">#05614F</color>
+    <color name="light_yellow">#FFD361</color>
+    <color name="dark_yellow">#987008</color>
 
 </resources>

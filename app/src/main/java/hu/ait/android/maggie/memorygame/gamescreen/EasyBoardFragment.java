@@ -1,6 +1,7 @@
 package hu.ait.android.maggie.memorygame.gamescreen;
 
 import android.app.Notification;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
@@ -14,8 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.RelativeLayout;
+import android.widget.ToggleButton;
 
 import hu.ait.android.maggie.memorygame.R;
 
@@ -30,13 +33,14 @@ public class EasyBoardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.board_fragment, container, false);
+        final Resources res = getActivity().getResources();
 
         RelativeLayout baseLayout = (RelativeLayout) getActivity().findViewById(R.id.bottomLayout);
-        int backgroundColor = getActivity().getResources().getColor(R.color.light_purple);
+        int backgroundColor = res.getColor(R.color.light_purple);
         baseLayout.setBackgroundColor(backgroundColor);
         rootView.setBackgroundColor(backgroundColor);
         ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(getActivity().getResources().getColor(R.color.dark_purple)));
+        actionBar.setBackgroundDrawable(new ColorDrawable(res.getColor(R.color.dark_purple)));
 
         GridLayout grid = (GridLayout) rootView.findViewById(R.id.boardLayout);
         grid.setRowCount(GRID_SIZE);
@@ -44,11 +48,32 @@ public class EasyBoardFragment extends Fragment {
         Point size = new Point();
         display.getSize(size);
         int cardWidth = size.x / (GRID_SIZE + 1);
+        initializeCards();
         for (int i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
-            Button button = new Button(getActivity());
-            button.setBackground(getActivity().getResources().getDrawable(R.drawable.easy_button));
+            final ToggleButton button = new ToggleButton(getActivity());
+            //Wanted to use a style here but couldn't get it working
+            button.setBackground(res.getDrawable(R.drawable.easy_button_back));
+            button.setTextOff("");
+            button.setTextOn("");
+            button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if(isChecked){
+                        //show card face
+                        //disable so the user can't re-flip cards
+                        //button.setEnabled(false);
+                    } else {
+                        button.setBackground(res.getDrawable(R.drawable.easy_button_back));
+                        button.setEnabled(true);
+                    }
+                }
+            });
             grid.addView(button, cardWidth, cardWidth);
         }
         return rootView;
+    }
+
+    private void initializeCards() {
+        //randomly selects pairs of "cards" and makes them match
     }
 }

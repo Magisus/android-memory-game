@@ -17,17 +17,20 @@
     <Button
         android:id="@+id/newGameBtn"
         android:text="@string/new_game"
-        style="@style/MenuButton"/>
+        style="@style/MenuButton"
+        android:background="@drawable/menu_button_purple"/>
 
     <Button
         android:id="@+id/settingsBtn"
         android:text="@string/settings"
-        style="@style/MenuButton"/>
+        style="@style/MenuButton"
+        android:background="@drawable/menu_button_blue"/>
 
     <Button
         android:id="@+id/tutorialBtn"
         android:text="@string/tutorial"
-        style="@style/MenuButton"/>
+        style="@style/MenuButton"
+        android:background="@drawable/menu_button_yellow"/>
 
     <Button
         android:id="@+id/highScoresBtn"
