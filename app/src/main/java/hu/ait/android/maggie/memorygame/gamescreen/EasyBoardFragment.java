@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Display;
@@ -17,12 +16,17 @@ import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
+
 import hu.ait.android.maggie.memorygame.R;
 
 /**
  * Created by Magisus on 4/5/2015.
  */
-public class EasyBoardFragment extends Fragment {
+public class EasyBoardFragment extends BoardFragment {
 
     public static final String TAG = "EasyBoardFragment";
     public static final int GRID_SIZE = 4;
@@ -34,8 +38,14 @@ public class EasyBoardFragment extends Fragment {
 
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         View rootView = inflater.inflate(R.layout.board_fragment, container, false);
         res = getActivity().getResources();
 
@@ -49,38 +59,34 @@ public class EasyBoardFragment extends Fragment {
         grid = (GridLayout) rootView.findViewById(R.id.boardLayout);
         grid.setRowCount(GRID_SIZE);
 
-        cardFaces = new int[GRID_SIZE * GRID_SIZE / 2];
-        initializeCards();
         addButtonsToGrid();
 
         return rootView;
     }
 
-    private void initializeCards() {
-        for (int i = 0; i < cardFaces.length; i++) {
-            
-        }
-    }
 
-    private void addButtonsToGrid(){
+    private void addButtonsToGrid() {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int cardWidth = size.x / (GRID_SIZE + 1);
 
+
+        final List<Integer> cardFaces = selectCardPool(GRID_SIZE * GRID_SIZE / 2);
         for (int i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
             final ToggleButton button = new ToggleButton(getActivity());
             //Wanted to use a style here but couldn't get it working
             button.setTextOff("");
             button.setTextOn("");
             button.setBackground(res.getDrawable(R.drawable.easy_button_back));
+            button.setId(i);
             button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
-                        button.setBackground(res.getDrawable(R.drawable.med_button_back));
+                        button.setBackground(res.getDrawable(cardFaces.get(button.getId())));
                         //disable so the user can't re-flip cards
-                        //button.setEnabled(false);
+                        button.setEnabled(false);
                     } else {
                         button.setBackground(res.getDrawable(R.drawable.easy_button_back));
                         button.setEnabled(true);
@@ -94,4 +100,5 @@ public class EasyBoardFragment extends Fragment {
             button.toggle();
         }
     }
+
 }
