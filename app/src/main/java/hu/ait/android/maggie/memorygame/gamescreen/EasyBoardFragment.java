@@ -34,6 +34,8 @@ public class EasyBoardFragment extends BoardFragment {
     private Resources res;
     private GridLayout grid;
 
+    private ToggleButton activeCard;
+
     private int[] cardFaces;
 
 
@@ -85,8 +87,7 @@ public class EasyBoardFragment extends BoardFragment {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
                         button.setBackground(res.getDrawable(cardFaces.get(button.getId())));
-                        //disable so the user can't re-flip cards
-                        button.setEnabled(false);
+                        checkAgainstActiveCard(button);
                     } else {
                         button.setBackground(res.getDrawable(R.drawable.easy_button_back));
                         button.setEnabled(true);
@@ -96,8 +97,27 @@ public class EasyBoardFragment extends BoardFragment {
             grid.addView(button, cardWidth, cardWidth);
             //Some weirdness here, the default text still draws until the button has been toggled,
             // despite being set to ""
-            button.toggle();
-            button.toggle();
+//            button.toggle();
+//            button.toggle();
+        }
+    }
+
+    protected void checkAgainstActiveCard(ToggleButton newFlip){
+        if(activeCard != null){
+            //Found a pair
+            if(activeCard.getBackground().equals(newFlip.getBackground())){
+                activeCard.setEnabled(false);
+                newFlip.setEnabled(false);
+                activeCard = null;
+            } else { //Did not find a pair
+                activeCard.toggle();
+                activeCard.setEnabled(true);
+                activeCard = null;
+                newFlip.toggle();
+            }
+        } else { //First card to be flipped
+            activeCard = newFlip;
+            activeCard.setEnabled(false);
         }
     }
 

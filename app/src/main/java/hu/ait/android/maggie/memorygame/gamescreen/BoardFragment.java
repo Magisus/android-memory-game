@@ -2,12 +2,12 @@ package hu.ait.android.maggie.memorygame.gamescreen;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.Stack;
 
 import hu.ait.android.maggie.memorygame.R;
 
