@@ -25,7 +25,7 @@
          offset="0"
          id="stop4553" />
       <stop
-         style="stop-color:#ffcd2e;stop-opacity:1;"
+         style="stop-color:#72007c;stop-opacity:1;"
          offset="1"
          id="stop4555" />
     </linearGradient>
@@ -1183,6 +1183,17 @@
        fx="-64.649771"
        fy="-323.97065"
        r="19.172594" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4551"
+       id="radialGradient4728"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5588235,0,0,3.9768332,-146.70978,900.26189)"
+       cx="-64.649771"
+       cy="-323.97065"
+       fx="-64.649771"
+       fy="-323.97065"
+       r="19.172594" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1192,10 +1203,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="130.89428"
-     inkscape:cy="1484.7482"
+     inkscape:cx="203.62526"
+     inkscape:cy="854.41302"
      inkscape:document-units="px"
-     inkscape:current-layer="g4559-6"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-global="true"
      inkscape:window-width="1920"
@@ -1211,7 +1222,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1300,7 +1311,10 @@
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <g
-       id="g3800">
+       id="g3800"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf14.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="112.07645"
          x="244.28572"
@@ -1329,7 +1343,10 @@
     </g>
     <g
        transform="translate(328.40481,-148.72467)"
-       id="g3800-9">
+       id="g3800-9"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf13.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="112.07645"
          x="244.28572"
@@ -1358,7 +1375,10 @@
     </g>
     <g
        transform="translate(-180.71207,-273.98358)"
-       id="g4187">
+       id="g4187"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf16.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="112.07645"
          x="244.28572"
@@ -1387,7 +1407,10 @@
     </g>
     <g
        id="g3800-1"
-       transform="translate(-398.90503,-271.96328)">
+       transform="translate(-398.90503,-271.96328)"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf17.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-8"
@@ -1415,7 +1438,10 @@
          transform="translate(30.302252,37.616001)" />
     </g>
     <g
-       id="g4244">
+       id="g4244"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf18.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-33"
@@ -1444,7 +1470,10 @@
     </g>
     <g
        transform="translate(-331.22481,215.9404)"
-       id="g3800-0">
+       id="g3800-0"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf24.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="112.07645"
          x="244.28572"
@@ -1464,7 +1493,10 @@
          transform="translate(287.78825,-242.20438)" />
     </g>
     <g
-       id="g4248">
+       id="g4248"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf19.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-6-6"
@@ -1484,7 +1516,10 @@
          sodipodi:type="arc" />
     </g>
     <g
-       id="g4252">
+       id="g4252"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf20.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-6-0"
@@ -1504,7 +1539,10 @@
          sodipodi:type="arc" />
     </g>
     <g
-       id="g4256">
+       id="g4256"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf22.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-6-7"
@@ -1524,7 +1562,10 @@
          sodipodi:type="arc" />
     </g>
     <g
-       id="g4264">
+       id="g4264"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf21.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-6-3"
@@ -1544,7 +1585,10 @@
          sodipodi:type="arc" />
     </g>
     <g
-       id="g4260">
+       id="g4260"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf23.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3020-6-2"
@@ -1565,7 +1609,10 @@
     </g>
     <g
        transform="translate(37.480873,-225.49627)"
-       id="g3800-2">
+       id="g3800-2"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf15.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="112.07645"
          x="244.28572"
@@ -1593,7 +1640,10 @@
          sodipodi:type="star" />
     </g>
     <g
-       id="g4357">
+       id="g4357"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4"
          transform="translate(-87.778042,-533.59279)">
@@ -1626,7 +1676,10 @@
     </g>
     <g
        transform="translate(279.81225,-76.771595)"
-       id="g4357-5">
+       id="g4357-5"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf10.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-5"
          transform="translate(-87.778042,-533.59279)">
@@ -1658,8 +1711,11 @@
          sodipodi:type="star" />
     </g>
     <g
-       transform="translate(536.391,-1.9545873e-6)"
-       id="g4357-4">
+       transform="translate(616.19305,-33.335036)"
+       id="g4357-4"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf11.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-9"
          transform="translate(-87.778042,-533.59279)">
@@ -1687,7 +1743,7 @@
          sodipodi:cx="219.20309"
          sodipodi:sides="3"
          id="path4330-5"
-         style="fill:url(#linearGradient4380-3);fill-opacity:1;stroke:#000000;stroke-width:3.51266909000000020;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:url(#linearGradient4380-3);fill-opacity:1;stroke:#000000;stroke-width:3.51266909;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          sodipodi:type="star" />
     </g>
     <g
@@ -1725,7 +1781,10 @@
     </g>
     <g
        transform="translate(456.58895,175.76654)"
-       id="g4357-54">
+       id="g4357-54"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf12.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-4"
          transform="translate(-87.778042,-533.59279)">
@@ -1757,8 +1816,11 @@
          sodipodi:type="star" />
     </g>
     <g
-       transform="translate(272.74119,119.198)"
-       id="g4357-7">
+       transform="translate(503.05597,-246.47722)"
+       id="g4357-7"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf9.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-7"
          transform="translate(-87.778042,-533.59279)">
@@ -1791,7 +1853,10 @@
     </g>
     <g
        transform="translate(-341.32633,-533.59279)"
-       id="g4187-4-78">
+       id="g4187-4-78"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf7.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="112.07645"
          x="244.28572"
@@ -1823,7 +1888,10 @@
        transform="translate(-253.54829,-1.9545873e-6)">
       <g
          id="g4187-4-78-4"
-         transform="translate(-398.90502,-525.51157)">
+         transform="translate(-584.77309,-593.19179)"
+         inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf4.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
         <rect
            style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
            id="rect3020-1-9-58-6"
@@ -1833,16 +1901,22 @@
            y="112.07645" />
       </g>
       <rect
-         style="fill:url(#radialGradient4699);fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:url(#radialGradient4728);fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4549"
          width="53.538086"
          height="148.49242"
-         x="-88.388344"
-         y="-394.68134" />
+         x="-274.25641"
+         y="-462.36154"
+         inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf4.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
     </g>
     <g
        id="g4559-6"
-       transform="translate(-248.49753,165.66502)">
+       transform="translate(-248.49753,165.66502)"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-78-4-0"
          transform="translate(-398.90502,-525.51157)">
@@ -1864,7 +1938,10 @@
     </g>
     <g
        id="g4559-1"
-       transform="translate(-231.32494,402.04071)">
+       transform="translate(-231.32494,402.04071)"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf6.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-78-4-3"
          transform="translate(-398.90502,-525.51157)">
@@ -1886,7 +1963,10 @@
     </g>
     <g
        id="g4559-8"
-       transform="translate(-233.34524,-217.1828)">
+       transform="translate(-233.34524,-217.1828)"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-78-4-6"
          transform="translate(-398.90502,-525.51157)">
@@ -1908,7 +1988,10 @@
     </g>
     <g
        id="g4559-3"
-       transform="translate(18.18274,-249.50768)">
+       transform="translate(18.18274,-249.50768)"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-78-4-4"
          transform="translate(-398.90502,-525.51157)">
@@ -1930,7 +2013,10 @@
     </g>
     <g
        id="g4559-17"
-       transform="translate(290.92393,-233.34524)">
+       transform="translate(290.92393,-233.34524)"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\cf3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4187-4-78-4-2"
          transform="translate(-398.90502,-525.51157)">

@@ -3,7 +3,9 @@ package hu.ait.android.maggie.memorygame.gamescreen;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -30,13 +33,16 @@ public class EasyBoardFragment extends BoardFragment {
 
     public static final String TAG = "EasyBoardFragment";
     public static final int GRID_SIZE = 4;
+    public static final int PAIR_COUNT = GRID_SIZE  * GRID_SIZE / 2;
 
     private Resources res;
     private GridLayout grid;
 
     private ToggleButton activeCard;
 
-    private int[] cardFaces;
+    private Drawable cardBack;
+
+    private int pairsFound;
 
 
     @Override
@@ -61,6 +67,8 @@ public class EasyBoardFragment extends BoardFragment {
         grid = (GridLayout) rootView.findViewById(R.id.boardLayout);
         grid.setRowCount(GRID_SIZE);
 
+        cardBack = res.getDrawable(R.drawable.easy_button_back);
+
         addButtonsToGrid();
 
         return rootView;
@@ -74,13 +82,13 @@ public class EasyBoardFragment extends BoardFragment {
         int cardWidth = size.x / (GRID_SIZE + 1);
 
 
-        final List<Integer> cardFaces = selectCardPool(GRID_SIZE * GRID_SIZE / 2);
+        final List<Integer> cardFaces = selectCardPool(PAIR_COUNT);
         for (int i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
             final ToggleButton button = new ToggleButton(getActivity());
             //Wanted to use a style here but couldn't get it working
             button.setTextOff("");
             button.setTextOn("");
-            button.setBackground(res.getDrawable(R.drawable.easy_button_back));
+            button.setBackground(cardBack);
             button.setId(i);
             button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -89,7 +97,7 @@ public class EasyBoardFragment extends BoardFragment {
                         button.setBackground(res.getDrawable(cardFaces.get(button.getId())));
                         checkAgainstActiveCard(button);
                     } else {
-                        button.setBackground(res.getDrawable(R.drawable.easy_button_back));
+                        button.setBackground(cardBack);
                         button.setEnabled(true);
                     }
                 }
@@ -102,21 +110,34 @@ public class EasyBoardFragment extends BoardFragment {
         }
     }
 
-    protected void checkAgainstActiveCard(ToggleButton newFlip){
+    protected void checkAgainstActiveCard(final ToggleButton newFlip){
         if(activeCard != null){
             //Found a pair
-            if(activeCard.getBackground().equals(newFlip.getBackground())){
+            if(activeCard.getBackground().getConstantState().equals(newFlip.getBackground().getConstantState())){
                 activeCard.setEnabled(false);
                 newFlip.setEnabled(false);
                 activeCard = null;
+                pairsFound++;
+                if(pairsFound == PAIR_COUNT){
+                    Toast.makeText(getActivity(), "You win!", Toast.LENGTH_LONG).show();
+                }
             } else { //Did not find a pair
-                activeCard.toggle();
-                activeCard.setEnabled(true);
-                activeCard = null;
-                newFlip.toggle();
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        activeCard.toggle();
+                        activeCard.setEnabled(true);
+                        activeCard = null;
+                        newFlip.setChecked(false);
+                        newFlip.setBackground(cardBack);
+                        newFlip.setEnabled(true);
+                    }
+                }, 250);
             }
         } else { //First card to be flipped
             activeCard = newFlip;
+            //activeCard.setBackground(res.getDrawable(R.drawable.med_button_back));
             activeCard.setEnabled(false);
         }
     }
