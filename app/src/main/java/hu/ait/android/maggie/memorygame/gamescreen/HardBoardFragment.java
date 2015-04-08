@@ -3,6 +3,7 @@ package hu.ait.android.maggie.memorygame.gamescreen;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,11 +24,12 @@ import hu.ait.android.maggie.memorygame.R;
 /**
  * Created by Magisus on 4/6/2015.
  */
-public class HardBoardFragment extends Fragment {
+public class HardBoardFragment extends BoardFragment {
 
     public static final String TAG = "HardBoardFragment";
     public static final int GRID_WIDTH = 6;
     public static final int GRID_HEIGHT = 8;
+    public static final int PAIR_COUNT = GRID_HEIGHT * GRID_WIDTH / 2;
 
     private Resources res;
 
@@ -45,34 +47,17 @@ public class HardBoardFragment extends Fragment {
 
         GridLayout grid = (GridLayout) rootView.findViewById(R.id.boardLayout);
         grid.setRowCount(GRID_HEIGHT);
+
+        Drawable cardBack = res.getDrawable(R.drawable.hard_button_back);
+        setCardBack(cardBack);
+        setPairCount(PAIR_COUNT);
+
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int cardWidth = (int)(size.x / (GRID_WIDTH + 1.7));
-        for (int i = 0; i < GRID_HEIGHT * GRID_WIDTH; i++) {
-            final ToggleButton button = new ToggleButton(getActivity());
-            //Wanted to use a style here but couldn't get it working
-            button.setBackground(res.getDrawable(R.drawable.hard_button_back));
-            button.setTextOff("");
-            button.setTextOn("");
-            button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(isChecked){
-                        //show card face
-                        button.setBackground(res.getDrawable(R.drawable.easy_button_back));
-                        //disable so the user can't re-flip cards
-                        button.setEnabled(false);
-                    } else {
-                        button.setBackground(res.getDrawable(R.drawable.hard_button_back));
-                        button.setEnabled(true);
-                    }
-                }
-            });
-            grid.addView(button, cardWidth, cardWidth);
-            button.toggle();
-            button.toggle();
-        }
+        int cardWidth =(int)(size.x / (GRID_WIDTH + 1.7));
+
+        addButtonsToGrid(grid, GRID_WIDTH, GRID_HEIGHT, cardWidth);
         return rootView;
     }
 }

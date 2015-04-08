@@ -1,7 +1,15 @@
 package hu.ait.android.maggie.memorygame.gamescreen;
 
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.view.Display;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.GridLayout;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -20,11 +28,26 @@ public class BoardFragment extends Fragment {
 
     private Random rand;
 
+    private ToggleButton activeCard;
+
+    private Drawable cardBack;
+
+    private int pairsFound;
+    private int pairCount;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         rand = new Random();
         initializeCards();
+    }
+
+    protected void setCardBack(Drawable cardBack){
+        this.cardBack = cardBack;
+    }
+
+    protected void setPairCount(int pairCount){
+        this.pairCount = pairCount;
     }
 
     private void initializeCards() {
@@ -76,5 +99,69 @@ public class BoardFragment extends Fragment {
         }
         Collections.shuffle(cardFaces);
         return cardFaces;
+    }
+
+    protected void addButtonsToGrid(GridLayout grid, int columns, int rows, int cardWidth) {
+        final List<Integer> cardFaces = selectCardPool(pairCount);
+        for (int i = 0; i < columns * rows; i++) {
+            final ToggleButton button = new ToggleButton(getActivity());
+            //Wanted to use a style here but couldn't get it working
+            button.setTextOff("");
+            button.setTextOn("");
+            button.setBackground(cardBack);
+            button.setId(i);
+            button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                    if (isChecked) {
+                        button.setBackground(getActivity().getResources().getDrawable(cardFaces
+                                .get(button.getId())));
+                        checkAgainstActiveCard(button);
+                    } else {
+                        button.setBackground(cardBack);
+                        button.setEnabled(true);
+                    }
+                }
+            });
+            grid.addView(button, cardWidth, cardWidth);
+            //Some weirdness here, the default text still draws until the button has been toggled,
+            // despite being set to ""
+//            button.toggle();
+//            button.toggle();
+
+        }
+    }
+
+    protected void checkAgainstActiveCard(final ToggleButton newFlip){
+        if(activeCard != null){
+            //Found a pair
+            if(activeCard.getBackground().getConstantState().equals(newFlip.getBackground().getConstantState())){
+                activeCard.setEnabled(false);
+                newFlip.setEnabled(false);
+                activeCard = null;
+                pairsFound++;
+                if(pairsFound == pairCount){
+                    Toast.makeText(getActivity(), "You win!", Toast.LENGTH_LONG).show();
+                }
+            } else { //Did not find a pair
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        activeCard.toggle();
+                        activeCard.setEnabled(true);
+                        activeCard = null;
+                        newFlip.setChecked(false);
+                        newFlip.setBackground(cardBack);
+                        newFlip.setEnabled(true);
+                    }
+                }, 250);
+            }
+        } else { //First card to be flipped
+            activeCard = newFlip;
+            //activeCard.setBackground(res.getDrawable(R.drawable.med_button_back));
+            activeCard.setEnabled(false);
+        }
     }
 }
