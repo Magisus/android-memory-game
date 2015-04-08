@@ -62,12 +62,7 @@ public class EasyBoardFragment extends BoardFragment {
         setCardBack(cardBack);
         setPairCount(PAIR_COUNT);
 
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int cardWidth = size.x / (GRID_SIZE + 1);
-
-        addButtonsToGrid(grid, GRID_SIZE, GRID_SIZE, cardWidth);
+        addButtonsToGrid(grid, GRID_SIZE, GRID_SIZE, calculateCardWidth(GRID_SIZE, 1));
 
         return rootView;
     }

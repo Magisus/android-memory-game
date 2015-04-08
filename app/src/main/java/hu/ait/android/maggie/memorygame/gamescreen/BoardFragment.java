@@ -101,6 +101,13 @@ public class BoardFragment extends Fragment {
         return cardFaces;
     }
 
+    protected int calculateCardWidth(int columns, double scalingFactor) {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return (int) (size.x / (columns + scalingFactor));
+    }
+
     protected void addButtonsToGrid(GridLayout grid, int columns, int rows, int cardWidth) {
         final List<Integer> cardFaces = selectCardPool(pairCount);
         for (int i = 0; i < columns * rows; i++) {
@@ -156,11 +163,10 @@ public class BoardFragment extends Fragment {
                         newFlip.setBackground(cardBack);
                         newFlip.setEnabled(true);
                     }
-                }, 250);
+                }, 350);
             }
         } else { //First card to be flipped
             activeCard = newFlip;
-            //activeCard.setBackground(res.getDrawable(R.drawable.med_button_back));
             activeCard.setEnabled(false);
         }
     }

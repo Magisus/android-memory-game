@@ -50,12 +50,7 @@ public class MediumBoardFragment extends BoardFragment {
         setCardBack(cardBack);
         setPairCount(PAIR_COUNT);
 
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int cardWidth = (int)(size.x / (GRID_WIDTH + 1.3));
-
-        addButtonsToGrid(grid, GRID_WIDTH, GRID_HEIGHT, cardWidth);
+        addButtonsToGrid(grid, GRID_WIDTH, GRID_HEIGHT, calculateCardWidth(GRID_WIDTH, 1.3));
         return rootView;
     }
 }
