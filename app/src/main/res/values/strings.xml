@@ -12,4 +12,14 @@
     <string name="easy_text">Easy (4x4)</string>
     <string name="medium_text">Medium (5x6)</string>
     <string name="hard_text">Hard (6x8)</string>
+    <string name="title_activity_tutorial">Tutorial</string>
+    <string name="premise_text">Find pairs!</string>
+    <string name="go_fast_text">Race the clock!</string>
+    <string name="progress_text">See your high scores!</string>
+    <string name="tutorial_label_play">Play</string>
+    <string name="tutorial_label_speed">Speed</string>
+    <string name="tutorial_label_scores">Scores</string>
+    <string name="create_profile">To begin, create your profile:</string>
+    <string name="start">Start</string>
+    <string name="tutorial_lable_start">Start!</string>
 </resources>

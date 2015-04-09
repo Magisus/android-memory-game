@@ -20,6 +20,11 @@
             android:name=".gamescreen.GameScreenActivity"
             android:label="@string/title_activity_game_screen" >
         </activity>
+        <activity
+            android:name=".tutorial.TutorialActivity"
+            android:label="@string/title_activity_tutorial"
+            android:theme="@style/YellowActionBarTheme">
+        </activity>
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import hu.ait.android.maggie.memorygame.R;
 import hu.ait.android.maggie.memorygame.gamescreen.GameScreenActivity;
+import hu.ait.android.maggie.memorygame.tutorial.TutorialActivity;
 
 /**
  * Created by Magisus on 4/2/2015.
@@ -28,6 +29,14 @@ public class MainMenuFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainMenuFragment.this.startActivity(new Intent(getActivity(), GameScreenActivity.class));
+            }
+        });
+
+        Button tutorialBtn = (Button) rootView.findViewById(R.id.tutorialBtn);
+        tutorialBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainMenuFragment.this.startActivity(new Intent(getActivity(), TutorialActivity.class));
             }
         });
         return rootView;
