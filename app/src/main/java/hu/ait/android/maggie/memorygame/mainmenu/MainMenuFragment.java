@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import hu.ait.android.maggie.memorygame.R;
 import hu.ait.android.maggie.memorygame.gamescreen.GameScreenActivity;
+import hu.ait.android.maggie.memorygame.settings.SettingsActivity;
 
 /**
  * Created by Magisus on 4/2/2015.
@@ -28,6 +29,13 @@ public class MainMenuFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainMenuFragment.this.startActivity(new Intent(getActivity(), GameScreenActivity.class));
+            }
+        });
+        Button settingsBtn = (Button) rootView.findViewById(R.id.settingsBtn);
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainMenuFragment.this.startActivity(new Intent(getActivity(), SettingsActivity.class));
             }
         });
         return rootView;

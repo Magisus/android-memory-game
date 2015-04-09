@@ -24,8 +24,8 @@ public class MainMenuActivity extends FragmentActivity {
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     fragmentManager.beginTransaction();
 
-            MainMenuFragment fragmentLogin = new MainMenuFragment();
-            fragmentTransaction.replace(R.id.layoutContainer, fragmentLogin,
+            MainMenuFragment mainMenuFragment = new MainMenuFragment();
+            fragmentTransaction.replace(R.id.layoutContainer, mainMenuFragment,
                     MainMenuFragment.TAG);
 
             fragmentTransaction.commit();
