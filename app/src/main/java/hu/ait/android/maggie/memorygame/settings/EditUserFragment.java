@@ -1,6 +1,8 @@
 package hu.ait.android.maggie.memorygame.settings;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.gamescreen.GameScreenActivity;
 
 /**
  * Created by Magisus on 4/9/2015.
