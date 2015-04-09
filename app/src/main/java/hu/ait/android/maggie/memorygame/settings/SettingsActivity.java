@@ -10,6 +10,11 @@ import hu.ait.android.maggie.memorygame.R;
 
 public class SettingsActivity extends ActionBarActivity {
 
+    public static final String SETTINGS = "SettingsSharedPreferences";
+    public static final String NAME = "name";
+    public static final String AGE = "age";
+    public static final String GENDER = "gender";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,8 @@ public class SettingsActivity extends ActionBarActivity {
         if (fragment == null) {
             if (SettingsDisplayFragment.TAG.equals(tag)) {
                 fragment = new SettingsDisplayFragment();
+            } else if(EditUserFragment.TAG.equals(tag)){
+                fragment = new EditUserFragment();
             }
         }
 

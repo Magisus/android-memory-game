@@ -116,6 +116,7 @@ public class BoardFragment extends Fragment {
             button.setTextOff("");
             button.setTextOn("");
             button.setBackground(cardBack);
+            button.setChecked(false);
             button.setId(i);
             button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override

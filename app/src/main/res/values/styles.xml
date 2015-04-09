@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -22,5 +22,34 @@
     <color name="dark_blue">#05614F</color>
     <color name="light_yellow">#FFD361</color>
     <color name="dark_yellow">#987008</color>
+    <color name="dark_grey">#555555</color>
+    <color name="light_grey">#bfbfbf</color>
+
+    <style name="GreyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background"  tools:ignore="NewApi">@color/dark_grey</item>
+        <item name="background">@color/dark_grey</item>
+    </style>
+
+    <style name="GreyActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle"   tools:ignore="NewApi">@style/GreyActionBar</item>
+        <item name="actionBarStyle">@style/GreyActionBar</item>
+    </style>
+
+    <style name="SettingsInfoText" parent="android:TextAppearance.Widget.TextView">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="SettingsLabelText" parent="android:TextAppearance.Widget.TextView">
+        <item name="android:textColor">#555555</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
 
 </resources>

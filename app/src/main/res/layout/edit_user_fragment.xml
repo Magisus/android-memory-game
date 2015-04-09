@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:text="@string/name_label"
+        style="@style/SettingsLabelText"/>
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:hint="@string/name_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/ageLabel"
+        android:text="@string/age_label"
+        style="@style/SettingsLabelText"/>
+
+    <EditText
+        android:id="@+id/ageEdit"
+        android:hint="@string/edit_age_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/genderLabel"
+        android:text="@string/gender_label"
+        style="@style/SettingsLabelText"/>
+
+    <RadioGroup
+        android:id="@+id/genderSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingRight="10dp">
+
+        <RadioButton
+            android:id="@+id/femaleRadio"
+            android:text="@string/female_radio_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/maleRadio"
+            android:text="@string/male_radio_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:text="@string/save_btn"
+        style="@style/MenuButton"
+        android:background="@drawable/menu_button_grey"
+        />
+
+</LinearLayout>
