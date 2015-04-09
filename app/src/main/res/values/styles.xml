@@ -23,14 +23,14 @@
     <color name="light_yellow">#FFD361</color>
     <color name="dark_yellow">#987008</color>
 
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="YellowActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background"  tools:ignore="NewApi">@color/dark_yellow</item>
         <item name="background">@color/dark_yellow</item>
     </style>
 
     <style name="YellowActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:actionBarStyle"   tools:ignore="NewApi">@style/MyActionBar</item>
-        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarStyle"   tools:ignore="NewApi">@style/YellowActionBar</item>
+        <item name="actionBarStyle">@style/YellowActionBar</item>
     </style>
 
     <style name="TutorialText" parent="android:TextAppearance.Widget.TextView">
