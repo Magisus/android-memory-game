@@ -22,4 +22,13 @@
     <string name="create_profile">To begin, create your profile:</string>
     <string name="start">Start</string>
     <string name="tutorial_lable_start">Start!</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="gender_label">Gender</string>
+    <string name="age_label">Age</string>
+    <string name="name_label">Name</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="edit_age_hint">Enter your age</string>
+    <string name="female_radio_text">Female</string>
+    <string name="male_radio_text">Male</string>
+    <string name="save_btn">Save</string>
 </resources>

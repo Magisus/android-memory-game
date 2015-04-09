@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import hu.ait.android.maggie.memorygame.R;
 import hu.ait.android.maggie.memorygame.gamescreen.GameScreenActivity;
+import hu.ait.android.maggie.memorygame.settings.SettingsActivity;
 import hu.ait.android.maggie.memorygame.tutorial.TutorialActivity;
 
 /**
@@ -21,14 +22,16 @@ public class MainMenuFragment extends Fragment {
     public static final String TAG = "MainMenu";
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.menu_fragment, container, false);
 
         Button newGameBtn = (Button) rootView.findViewById(R.id.newGameBtn);
         newGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainMenuFragment.this.startActivity(new Intent(getActivity(), GameScreenActivity.class));
+                MainMenuFragment.this.startActivity(new Intent(getActivity(),
+                        GameScreenActivity.class));
             }
         });
 
@@ -36,7 +39,18 @@ public class MainMenuFragment extends Fragment {
         tutorialBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainMenuFragment.this.startActivity(new Intent(getActivity(), TutorialActivity.class));
+                MainMenuFragment.this.startActivity(new Intent(getActivity(),
+                        TutorialActivity.class));
+
+            }
+        });
+
+        Button settingsBtn = (Button) rootView.findViewById(R.id.settingsBtn);
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainMenuFragment.this.startActivity(new Intent(getActivity(),
+                        SettingsActivity.class));
             }
         });
         return rootView;

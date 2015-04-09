@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+     <TextView
+         android:id="@+id/nameLabel"
+         android:text="@string/name_label"
+         style="@style/SettingsLabelText"/>
+
+    <TextView
+        android:id="@+id/nameText"
+        android:text="UserName"
+        android:layout_below="@id/nameLabel"
+        style="@style/SettingsInfoText"/>
+
+    <TextView
+        android:id="@+id/ageLabel"
+        android:text="@string/age_label"
+        style="@style/SettingsLabelText"
+        android:layout_below="@id/nameText"/>
+
+    <TextView
+        android:id="@+id/ageText"
+        android:text="21"
+        android:layout_below="@+id/ageLabel"
+        style="@style/SettingsInfoText"/>
+
+    <TextView
+        android:id="@+id/genderLabel"
+        android:text="@string/gender_label"
+        style="@style/SettingsLabelText"
+        android:layout_below="@id/ageText"/>
+
+    <TextView
+        android:id="@+id/genderText"
+        android:text="Female"
+        style="@style/SettingsInfoText"
+        android:layout_below="@+id/genderLabel"/>
+
+    <Button
+        android:id="@+id/editUserBtn"
+        android:text="Edit User"
+        style="@style/MenuButton"
+        android:background="@drawable/menu_button_grey"
+        android:layout_alignParentBottom="true"/>
+
+    <!-- TODO: Save multiple users
+    <Button-->
+        <!--android:id="@+id/changeUserButton"-->
+        <!--android:text="Change User"-->
+        <!--style="@style/MenuButton"-->
+        <!--android:background="@drawable/menu_button_grey"-->
+        <!--android:layout_alignParentBottom="true"/>-->
+</RelativeLayout>
