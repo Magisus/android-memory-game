@@ -1,5 +1,6 @@
 package hu.ait.android.maggie.memorygame.highscores;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +14,9 @@ public class HighScoresActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
+
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(new HighScoresFragmentAdapter(getSupportFragmentManager(), getApplicationContext()));
     }
 
 

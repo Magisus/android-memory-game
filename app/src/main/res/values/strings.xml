@@ -32,4 +32,7 @@
     <string name="male_radio_text">Male</string>
     <string name="save_btn">Save</string>
     <string name="title_activity_high_scores">High Scores</string>
+    <string name="hs_easy">Easy</string>
+    <string name="hs_medium">Medium</string>
+    <string name="hs_hard">Hard</string>
 </resources>

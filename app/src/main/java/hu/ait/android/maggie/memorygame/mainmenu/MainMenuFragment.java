@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import hu.ait.android.maggie.memorygame.R;
 import hu.ait.android.maggie.memorygame.gamescreen.GameScreenActivity;
+import hu.ait.android.maggie.memorygame.highscores.HighScoresActivity;
 import hu.ait.android.maggie.memorygame.settings.SettingsActivity;
 import hu.ait.android.maggie.memorygame.tutorial.TutorialActivity;
 
@@ -42,6 +43,15 @@ public class MainMenuFragment extends Fragment {
                 MainMenuFragment.this.startActivity(new Intent(getActivity(),
                         TutorialActivity.class));
 
+            }
+        });
+
+        Button highScoresBtn = (Button) rootView.findViewById(R.id.highScoresBtn);
+        highScoresBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainMenuFragment.this.startActivity(new Intent(getActivity(),
+                        HighScoresActivity.class));
             }
         });
 

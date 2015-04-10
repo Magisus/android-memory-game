@@ -27,9 +27,6 @@ public class InitializeSettingsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.init_settings_fragment, container, false);
 
-        EditUserFragment editUserFragment = new EditUserFragment(TAG);
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.add(R.id.fragmentContainer, editUserFragment, EditUserFragment.TAG).commit();
 
 
         return rootView;
