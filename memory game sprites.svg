@@ -19,6 +19,17 @@
   <defs
      id="defs4">
     <linearGradient
+       id="linearGradient4369">
+      <stop
+         style="stop-color:#bfbfbf;stop-opacity:1;"
+         offset="0"
+         id="stop4371" />
+      <stop
+         style="stop-color:#828282;stop-opacity:1;"
+         offset="1"
+         id="stop4373" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient4551">
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -1194,6 +1205,17 @@
        fx="-64.649771"
        fy="-323.97065"
        r="19.172594" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4369"
+       id="radialGradient4375"
+       cx="981.86829"
+       cy="490.71738"
+       fx="981.86829"
+       fy="490.71738"
+       r="100"
+       gradientTransform="matrix(1,0,0,0.25,0,368.03803)"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1203,8 +1225,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="203.62526"
-     inkscape:cy="854.41302"
+     inkscape:cx="496.21916"
+     inkscape:cy="369.5398"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2036,5 +2058,27 @@
          x="-88.388344"
          y="-394.68134" />
     </g>
+    <rect
+       style="fill:#555555;fill-opacity:1;stroke:none"
+       id="rect2996-17"
+       width="200"
+       height="50"
+       x="855.60431"
+       y="616.2301"
+       ry="9.40979"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\menu_btn_default_grey.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#radialGradient4375);fill-opacity:1;stroke:none"
+       id="rect2996-17-4"
+       width="200"
+       height="50"
+       x="881.86829"
+       y="465.71738"
+       ry="9.40979"
+       inkscape:export-filename="C:\Users\Magisus\AndroidStudioProjects\MemoryGame\app\src\main\res\drawable\menu_btn_pressed_grey.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>
