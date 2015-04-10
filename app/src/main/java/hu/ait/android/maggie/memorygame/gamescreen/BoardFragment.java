@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.Display;
-import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.Toast;
@@ -42,11 +41,11 @@ public class BoardFragment extends Fragment {
         initializeCards();
     }
 
-    protected void setCardBack(Drawable cardBack){
+    protected void setCardBack(Drawable cardBack) {
         this.cardBack = cardBack;
     }
 
-    protected void setPairCount(int pairCount){
+    protected void setPairCount(int pairCount) {
         this.pairCount = pairCount;
     }
 
@@ -87,9 +86,9 @@ public class BoardFragment extends Fragment {
     }
 
     /**
-     Create the pool of card faces, randomly selected. Each one is added twice to ensure
-     exactly two copies of each card appear on the board
-     **/
+     * Create the pool of card faces, randomly selected. Each one is added twice to ensure
+     * exactly two copies of each card appear on the board
+     */
     protected List<Integer> selectCardPool(int uniqueCardCount) {
         List<Integer> cardFaces = new ArrayList<>();
         for (int i = 0; i < uniqueCardCount; i++) {
@@ -141,15 +140,16 @@ public class BoardFragment extends Fragment {
         }
     }
 
-    protected void checkAgainstActiveCard(final ToggleButton newFlip){
-        if(activeCard != null){
+    protected void checkAgainstActiveCard(final ToggleButton newFlip) {
+        if (activeCard != null) {
             //Found a pair
-            if(activeCard.getBackground().getConstantState().equals(newFlip.getBackground().getConstantState())){
+            if (activeCard.getBackground().getConstantState().equals(newFlip.getBackground()
+                    .getConstantState())) {
                 activeCard.setEnabled(false);
                 newFlip.setEnabled(false);
                 activeCard = null;
                 pairsFound++;
-                if(pairsFound == pairCount){
+                if (pairsFound == pairCount) {
                     Toast.makeText(getActivity(), "You win!", Toast.LENGTH_LONG).show();
                 }
             } else { //Did not find a pair

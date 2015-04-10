@@ -32,6 +32,11 @@
             android:name=".highscores.HighScoresActivity"
             android:label="@string/title_activity_high_scores" >
         </activity>
+        <activity
+            android:name=".tutorial.TutorialActivity"
+            android:label="@string/title_activity_tutorial"
+            android:theme="@style/BlueActionBarTheme">
+        </activity>
     </application>
 
 </manifest>
