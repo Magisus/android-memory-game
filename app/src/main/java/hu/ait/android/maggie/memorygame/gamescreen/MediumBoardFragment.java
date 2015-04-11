@@ -35,7 +35,9 @@ public class MediumBoardFragment extends BoardFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.board_fragment, container, false);
+
+        super.onCreate(savedInstanceState);
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
 
         res = getActivity().getResources();
         RelativeLayout baseLayout = (RelativeLayout) getActivity().findViewById(R.id.bottomLayout);

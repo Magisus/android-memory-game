@@ -46,7 +46,7 @@ public class EasyBoardFragment extends BoardFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View rootView = inflater.inflate(R.layout.board_fragment, container, false);
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
         res = getActivity().getResources();
 
         RelativeLayout baseLayout = (RelativeLayout) getActivity().findViewById(R.id.bottomLayout);

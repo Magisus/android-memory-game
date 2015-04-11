@@ -29,7 +29,7 @@ public class ScoreAdapter extends BaseAdapter {
 
         //If not enough scores come from the database, make some placeholders
         for(int i = scores.size(); i < SCORE_SLOTS; i++){
-            scores.add(new Score(-1.0, "--", null, null));
+            scores.add(new Score("--", "--", null, null));
         }
     }
 
@@ -70,8 +70,7 @@ public class ScoreAdapter extends BaseAdapter {
         if(score != null){
             ViewHolder holder = (ViewHolder) v.getTag();
             holder.index.setText((position + 1) + ".");
-            //If there is no score saved for this index, display placeholder text
-            String time = score.getTimeSeconds() == -1.0 ? "--" : (score.getTimeSeconds() + "s");
+            String time = score.getTime();
             holder.time.setText(time);
             holder.name.setText(score.getName());
         }

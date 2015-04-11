@@ -11,7 +11,7 @@ public class Score extends SugarRecord<Score> {
 
     public enum Difficulty { EASY, MEDIUM, HARD }
 
-    private double timeSeconds;
+    private String time;
     private String name;
     private Date date;
     private Difficulty difficulty;
@@ -20,16 +20,16 @@ public class Score extends SugarRecord<Score> {
         //default constructor
     }
 
-    public Score(double timeSeconds, String name, Date date, Difficulty difficulty) {
+    public Score(String time, String name, Date date, Difficulty difficulty) {
 
-        this.timeSeconds = timeSeconds;
+       this.time = time;
         this.name = name;
         this.date = date;
         this.difficulty = difficulty;
     }
 
-    public double getTimeSeconds() {
-        return timeSeconds;
+    public String getTime() {
+        return time;
     }
 
     public String getName() {

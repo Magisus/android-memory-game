@@ -6,8 +6,13 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.Display;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Chronometer;
 import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.ToggleButton;
@@ -41,13 +46,23 @@ public class BoardFragment extends Fragment {
     private int pairsFound;
     private int pairCount;
 
-    private double elapsedTime;
+    private Chronometer timer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         rand = new Random();
         initializeCards();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.board_fragment, container, false);
+
+        timer = (Chronometer) rootView.findViewById(R.id.timer);
+
+        return rootView;
     }
 
     protected void setCardBack(Drawable cardBack) {
@@ -84,6 +99,18 @@ public class BoardFragment extends Fragment {
         availableCardFaces.add(R.drawable.cf22);
         availableCardFaces.add(R.drawable.cf23);
         availableCardFaces.add(R.drawable.cf24);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        timer.start();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        timer.stop();
     }
 
     protected void setDifficulty(Score.Difficulty difficulty) {
@@ -183,7 +210,7 @@ public class BoardFragment extends Fragment {
     private void saveNewScore(Score.Difficulty difficulty) {
         SharedPreferences prefs = getActivity().getSharedPreferences(SettingsActivity.SETTINGS,
                 Context.MODE_PRIVATE);
-        Score newScore = new Score(elapsedTime, prefs.getString(SettingsActivity.NAME, "--"),
+        Score newScore = new Score(timer.getText().toString(), prefs.getString(SettingsActivity.NAME, "--"),
                 new Date(System.currentTimeMillis()), difficulty);
         newScore.save();
     }
