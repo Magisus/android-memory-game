@@ -185,6 +185,7 @@ public class BoardFragment extends Fragment {
                 activeCard = null;
                 pairsFound++;
                 if (pairsFound == pairCount) {
+                    timer.stop();
                     saveNewScore(difficulty);
                 }
             } else { //Did not find a pair

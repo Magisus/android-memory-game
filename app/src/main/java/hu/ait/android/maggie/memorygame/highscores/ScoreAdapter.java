@@ -70,8 +70,7 @@ public class ScoreAdapter extends BaseAdapter {
         if(score != null){
             ViewHolder holder = (ViewHolder) v.getTag();
             holder.index.setText((position + 1) + ".");
-            String time = score.getTime();
-            holder.time.setText(time);
+            holder.time.setText(score.getTime());
             holder.name.setText(score.getName());
         }
         return v;

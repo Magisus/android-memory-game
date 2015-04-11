@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.RelativeLayout;
@@ -36,7 +37,8 @@ public class HardBoardFragment extends BoardFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.board_fragment, container, false);
+        super.onCreate(savedInstanceState);
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
         res = getActivity().getResources();
 
         RelativeLayout baseLayout = (RelativeLayout) getActivity().findViewById(R.id.bottomLayout);
@@ -52,6 +54,9 @@ public class HardBoardFragment extends BoardFragment {
         setCardBack(res.getDrawable(R.drawable.hard_button_back));
         setPairCount(PAIR_COUNT);
         setDifficulty(Score.Difficulty.HARD);
+
+        Chronometer timer = (Chronometer) rootView.findViewById(R.id.timer);
+        timer.setTextSize(25);
 
         addButtonsToGrid(grid, GRID_WIDTH, GRID_HEIGHT, calculateCardWidth(GRID_WIDTH, 1.7));
         return rootView;

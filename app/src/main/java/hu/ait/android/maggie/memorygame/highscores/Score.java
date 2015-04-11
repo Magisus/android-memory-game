@@ -21,7 +21,6 @@ public class Score extends SugarRecord<Score> {
     }
 
     public Score(String time, String name, Date date, Difficulty difficulty) {
-
        this.time = time;
         this.name = name;
         this.date = date;
