@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
 import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.highscores.Score;
 
 /**
  * Created by Magisus on 4/6/2015.
@@ -48,9 +49,9 @@ public class HardBoardFragment extends BoardFragment {
         GridLayout grid = (GridLayout) rootView.findViewById(R.id.boardLayout);
         grid.setRowCount(GRID_HEIGHT);
 
-        Drawable cardBack = res.getDrawable(R.drawable.hard_button_back);
-        setCardBack(cardBack);
+        setCardBack(res.getDrawable(R.drawable.hard_button_back));
         setPairCount(PAIR_COUNT);
+        setDifficulty(Score.Difficulty.HARD);
 
         addButtonsToGrid(grid, GRID_WIDTH, GRID_HEIGHT, calculateCardWidth(GRID_WIDTH, 1.7));
         return rootView;

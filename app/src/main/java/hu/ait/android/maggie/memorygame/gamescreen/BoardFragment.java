@@ -1,5 +1,7 @@
 package hu.ait.android.maggie.memorygame.gamescreen;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,20 +10,24 @@ import android.support.v4.app.Fragment;
 import android.view.Display;
 import android.widget.CompoundButton;
 import android.widget.GridLayout;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.highscores.Score;
+import hu.ait.android.maggie.memorygame.settings.SettingsActivity;
 
 /**
  * Created by Magisus on 4/7/2015.
  */
 public class BoardFragment extends Fragment {
+
+    public static final String DIFF_KEY = "difficulty";
 
     private List<Integer> availableCardFaces;
 
@@ -30,9 +36,12 @@ public class BoardFragment extends Fragment {
     private ToggleButton activeCard;
 
     private Drawable cardBack;
+    private Score.Difficulty difficulty;
 
     private int pairsFound;
     private int pairCount;
+
+    private double elapsedTime;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +84,10 @@ public class BoardFragment extends Fragment {
         availableCardFaces.add(R.drawable.cf22);
         availableCardFaces.add(R.drawable.cf23);
         availableCardFaces.add(R.drawable.cf24);
+    }
+
+    protected void setDifficulty(Score.Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     /**
@@ -132,11 +145,6 @@ public class BoardFragment extends Fragment {
                 }
             });
             grid.addView(button, cardWidth, cardWidth);
-            //Some weirdness here, the default text still draws until the button has been toggled,
-            // despite being set to ""
-//            button.toggle();
-//            button.toggle();
-
         }
     }
 
@@ -150,7 +158,7 @@ public class BoardFragment extends Fragment {
                 activeCard = null;
                 pairsFound++;
                 if (pairsFound == pairCount) {
-                    Toast.makeText(getActivity(), "You win!", Toast.LENGTH_LONG).show();
+                    saveNewScore(difficulty);
                 }
             } else { //Did not find a pair
                 final Handler handler = new Handler();
@@ -170,5 +178,13 @@ public class BoardFragment extends Fragment {
             activeCard = newFlip;
             activeCard.setEnabled(false);
         }
+    }
+
+    private void saveNewScore(Score.Difficulty difficulty) {
+        SharedPreferences prefs = getActivity().getSharedPreferences(SettingsActivity.SETTINGS,
+                Context.MODE_PRIVATE);
+        Score newScore = new Score(elapsedTime, prefs.getString(SettingsActivity.NAME, "--"),
+                new Date(System.currentTimeMillis()), difficulty);
+        newScore.save();
     }
 }

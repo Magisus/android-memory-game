@@ -22,6 +22,7 @@ import android.widget.ToggleButton;
 import java.util.List;
 
 import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.highscores.Score;
 
 /**
  * Created by Magisus on 4/5/2015.
@@ -58,9 +59,10 @@ public class EasyBoardFragment extends BoardFragment {
         grid = (GridLayout) rootView.findViewById(R.id.boardLayout);
         grid.setRowCount(GRID_SIZE);
 
-        Drawable cardBack = res.getDrawable(R.drawable.easy_button_back);
-        setCardBack(cardBack);
+        //Set up parent
+        setCardBack(res.getDrawable(R.drawable.easy_button_back));
         setPairCount(PAIR_COUNT);
+        setDifficulty(Score.Difficulty.EASY);
 
         addButtonsToGrid(grid, GRID_SIZE, GRID_SIZE, calculateCardWidth(GRID_SIZE, 1));
 

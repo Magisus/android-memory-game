@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hu.ait.android.maggie.memorygame" >
+          xmlns:tools="http://schemas.android.com/tools"
+          package="hu.ait.android.maggie.memorygame">
 
     <application
+        tools:replace="android:icon"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name="com.orm.SugarApp">
+
+        <meta-data android:name="DATABASE" android:value="sugar_scores.db" />
+        <meta-data android:name="VERSION" android:value="2" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME"
+                   android:value="hu.ait.android.maggie.memorygame.highscores" />
+
         <activity
             android:name=".mainmenu.MainMenuActivity"
             android:label="@string/app_name"
