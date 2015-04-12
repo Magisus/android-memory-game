@@ -7,8 +7,9 @@
         android:id="@+id/boardLayout"
         android:useDefaultMargins="true"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
 
     </GridLayout>
 

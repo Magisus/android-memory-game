@@ -35,4 +35,10 @@
     <string name="hs_easy">Easy</string>
     <string name="hs_medium">Medium</string>
     <string name="hs_hard">Hard</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_clear_scores">Clear</string>
+    <string name="all_text">All</string>
+    <string name="hs_clear_dialog_title">Choose scores to clear:</string>
+    <string name="clear_button">Clear</string>
+    <string name="cancel_btn">Cancel</string>
 </resources>

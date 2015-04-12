@@ -14,6 +14,8 @@ import hu.ait.android.maggie.memorygame.R;
 public class GameScreenActivity extends ActionBarActivity implements DifficultyDialog
         .OptionsFragmentInterface {
 
+    private String difficulty;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,30 +39,24 @@ public class GameScreenActivity extends ActionBarActivity implements DifficultyD
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
+            getGameBoard(difficulty);
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     private void getGameBoard(String tag) {
         Fragment fragment = null;
-        fragment = getSupportFragmentManager().findFragmentByTag(tag);
-        if (fragment == null) {
-            if (EasyBoardFragment.TAG.equals(tag)) {
-                fragment = new EasyBoardFragment();
-            } else if(MediumBoardFragment.TAG.equals(tag)){
-                fragment = new MediumBoardFragment();
-            } else if (HardBoardFragment.TAG.equals(tag)){
-                fragment = new HardBoardFragment();
-            }
+        if (EasyBoardFragment.TAG.equals(tag)) {
+            fragment = new EasyBoardFragment();
+        } else if (MediumBoardFragment.TAG.equals(tag)) {
+            fragment = new MediumBoardFragment();
+        } else if (HardBoardFragment.TAG.equals(tag)) {
+            fragment = new HardBoardFragment();
         }
 
         if (fragment != null) {
@@ -73,11 +69,15 @@ public class GameScreenActivity extends ActionBarActivity implements DifficultyD
 
     @Override
     public void onOptionsFragmentResult(String difficulty) {
+        this.difficulty = difficulty;
         if (getString(R.string.easy_text).equals(difficulty)) {
+            this.difficulty = EasyBoardFragment.TAG;
             getGameBoard(EasyBoardFragment.TAG);
         } else if (getString(R.string.medium_text).equals(difficulty)) {
+            this.difficulty = MediumBoardFragment.TAG;
             getGameBoard(MediumBoardFragment.TAG);
         } else if (getString(R.string.hard_text).equals(difficulty)) {
+            this.difficulty = HardBoardFragment.TAG;
             getGameBoard(HardBoardFragment.TAG);
         } else {
             //handle this, dunno if it can happen, but handle it

@@ -6,39 +6,49 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import hu.ait.android.maggie.memorygame.R;
+import java.util.List;
 
-public class HighScoresActivity extends ActionBarActivity {
+import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.gamescreen.DifficultyDialog;
+
+public class HighScoresActivity extends ActionBarActivity implements ClearOptionsDialog.MultiOptionsFragmentInterface{
+
+    private ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
 
-        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new HighScoresFragmentAdapter(getSupportFragmentManager(), getApplicationContext()));
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_high_scores, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_clear) {
+            ClearOptionsDialog clearDialog = new ClearOptionsDialog();
+            clearDialog.show(getSupportFragmentManager(), ClearOptionsDialog.TAG);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onOptionsFragmentResult(List<String> choices) {
+        for(String difficulty : choices) {
+            Score.deleteAll(Score.class, "difficulty = ?", difficulty);
+        }
+        pager.setAdapter(new HighScoresFragmentAdapter(getSupportFragmentManager(), getApplicationContext()));
     }
 }
