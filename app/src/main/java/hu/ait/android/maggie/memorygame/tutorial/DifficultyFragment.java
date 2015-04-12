@@ -15,21 +15,20 @@ import hu.ait.android.maggie.memorygame.R;
 /**
  * Created by Magisus on 4/9/2015.
  */
-public class PremiseFragment extends Fragment {
+public class DifficultyFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
-    Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.premise_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.difficulty_fragment, container, false);
+
+        ImageView screens = (ImageView) rootView.findViewById(R.id.difficultyScreens);
+        screens.setAdjustViewBounds(true);
 
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        ImageView screenshot = (ImageView) rootView.findViewById(R.id.screenshot);
-        screenshot.setAdjustViewBounds(true);
-        screenshot.setMaxWidth((int)(size.x * 0.75));
-        screenshot.setMaxHeight((int)(size.y * 0.6));
-
+        screens.setMaxWidth((int) (size.x * 0.85));
+        screens.setMaxHeight((int)(size.y * 0.70));
         return rootView;
     }
 }

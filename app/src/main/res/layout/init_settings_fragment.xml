@@ -8,11 +8,10 @@
         style="@style/TutorialText"
         android:text="@string/create_profile"/>
 
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        </FrameLayout>
+    <Button
+        android:id="@+id/createProfileBtn"
+        android:text="@string/create_profile_btn"
+        android:background="@drawable/menu_button_blue"
+        style="@style/MenuButton"/>
 
 </LinearLayout>

@@ -1,6 +1,5 @@
 package hu.ait.android.maggie.memorygame.settings;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,6 +22,7 @@ import hu.ait.android.maggie.memorygame.gamescreen.GameScreenActivity;
 public class EditUserFragment extends Fragment {
 
     public static final String TAG = "EditUserFragment";
+    public static final String FROM_TUTORIAL = "FROM_TUTORIAL";
 
     private Button saveBtn;
 
@@ -37,11 +37,21 @@ public class EditUserFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.edit_user_fragment, container, false);
 
         saveBtn = (Button) rootView.findViewById(R.id.saveBtn);
+        boolean fromTutorial = getArguments().getBoolean(FROM_TUTORIAL);
+        if(fromTutorial){
+            saveBtn.setText("Save and start!");
+        }
+
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveUserData();
-                ((SettingsActivity)getActivity()).showFragment(SettingsDisplayFragment.TAG);
+                if (getArguments().getBoolean(FROM_TUTORIAL)) {
+                    EditUserFragment.this.startActivity(new Intent(getActivity(),
+                            GameScreenActivity.class));
+                } else {
+                    ((SettingsActivity) getActivity()).showFragment(SettingsDisplayFragment.TAG);
+                }
             }
         });
 
@@ -62,5 +72,13 @@ public class EditUserFragment extends Fragment {
         editor.putString(SettingsActivity.GENDER, femaleRadio.isChecked() ? femaleRadio.getText()
                 .toString() : maleRadio.getText().toString());
         editor.commit();
+    }
+
+    public static EditUserFragment newInstance(boolean fromTutorial) {
+        EditUserFragment fragment = new EditUserFragment();
+        Bundle args = new Bundle();
+        args.putBoolean(FROM_TUTORIAL, fromTutorial);
+        fragment.setArguments(args);
+        return fragment;
     }
 }

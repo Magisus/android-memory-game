@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 
 import hu.ait.android.maggie.memorygame.R;
+import hu.ait.android.maggie.memorygame.tutorial.InitializeSettingsFragment;
 
 public class SettingsActivity extends ActionBarActivity {
 
@@ -15,12 +16,19 @@ public class SettingsActivity extends ActionBarActivity {
     public static final String AGE = "age";
     public static final String GENDER = "gender";
 
+    private boolean editMode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        showFragment(SettingsDisplayFragment.TAG);
+        editMode = getIntent().getBooleanExtra(InitializeSettingsFragment.EDIT_MODE, false);
+        if (editMode) {
+            showFragment(EditUserFragment.TAG);
+        } else {
+            showFragment(SettingsDisplayFragment.TAG);
+        }
     }
 
     public void showFragment(String tag) {
@@ -30,8 +38,8 @@ public class SettingsActivity extends ActionBarActivity {
         if (fragment == null) {
             if (SettingsDisplayFragment.TAG.equals(tag)) {
                 fragment = new SettingsDisplayFragment();
-            } else if(EditUserFragment.TAG.equals(tag)){
-                fragment = new EditUserFragment();
+            } else if (EditUserFragment.TAG.equals(tag)) {
+                fragment = EditUserFragment.newInstance(editMode);
             }
         }
 

@@ -37,7 +37,8 @@
             android:name=".settings.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait"
-            android:theme="@style/GreyActionBarTheme" >
+            android:theme="@style/GreyActionBarTheme"
+            android:noHistory="true">
         </activity>
         <activity
             android:name=".highscores.HighScoresActivity"
@@ -47,7 +48,8 @@
         <activity
             android:name=".tutorial.TutorialActivity"
             android:label="@string/title_activity_tutorial"
-            android:theme="@style/BlueActionBarTheme">
+            android:theme="@style/BlueActionBarTheme"
+            android:noHistory="true">
         </activity>
     </application>
 

@@ -5,18 +5,18 @@
               android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/topText"
+        android:id="@+id/chooseText"
         style="@style/TutorialText"
-        android:text="@string/progress_text"
+        android:text="@string/choose_difficulty"
         android:layout_marginTop="5dp"/>
 
     <ImageView
-        android:id="@+id/screenshot"
-        android:src="@drawable/high_scores_screenshot"
+        android:layout_marginTop="15dp"
+        android:id="@+id/difficultyScreens"
+        android:src="@drawable/difficulty_screens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/topText"
-        android:layout_marginTop="5dp"/>
+        android:layout_below="@+id/chooseText"/>
 
 </RelativeLayout>

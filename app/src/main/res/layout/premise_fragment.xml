@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/topText"
         style="@style/TutorialText"
-        android:text="@string/premise_text"/>
+        android:text="@string/find_pairs"
+        android:layout_marginTop="5dp"/>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/screenshot"
+        android:src="@drawable/easy_screenshot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/topText"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/screenshot"
+        android:id="@+id/bottomText"
+        style="@style/TutorialText"
+        android:text="@string/go_fast_text"
+        />
+
+</RelativeLayout>

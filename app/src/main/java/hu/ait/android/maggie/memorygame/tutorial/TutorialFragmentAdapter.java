@@ -23,9 +23,9 @@ public class TutorialFragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         switch (i){
             case 0:
-                return new PremiseFragment();
+                return new DifficultyFragment();
             case 1:
-                return new GoFastFragment();
+                return new PremiseFragment();
             case 2:
                 return new TrackScoresFragment();
             case 3:
@@ -39,13 +39,13 @@ public class TutorialFragmentAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return context.getString(R.string.tutorial_label_play);
+                return context.getString(R.string.tutorial_label_difficulty);
             case 1:
-                return context.getString(R.string.tutorial_label_speed);
+                return context.getString(R.string.tutorial_label_play);
             case 2:
                 return context.getString(R.string.tutorial_label_scores);
             case 3:
-                return context.getString(R.string.tutorial_lable_start);
+                return context.getString(R.string.tutorial_label_start);
             default:
                 return context.getString(R.string.tutorial_label_play);
         }
