@@ -10,7 +10,6 @@
 
     <TextView
         android:id="@+id/nameText"
-        android:text="UserName"
         android:layout_below="@id/nameLabel"
         style="@style/SettingsInfoText"/>
 
@@ -22,7 +21,6 @@
 
     <TextView
         android:id="@+id/ageText"
-        android:text="21"
         android:layout_below="@+id/ageLabel"
         style="@style/SettingsInfoText"/>
 
@@ -34,13 +32,12 @@
 
     <TextView
         android:id="@+id/genderText"
-        android:text="Female"
         style="@style/SettingsInfoText"
         android:layout_below="@+id/genderLabel"/>
 
     <Button
         android:id="@+id/editUserBtn"
-        android:text="Edit User"
+        android:text="@string/change_usr_btn"
         style="@style/MenuButton"
         android:background="@drawable/menu_button_grey"
         android:layout_alignParentBottom="true"/>

@@ -69,18 +69,20 @@ public class GameScreenActivity extends ActionBarActivity implements DifficultyD
 
     @Override
     public void onOptionsFragmentResult(String difficulty) {
-        this.difficulty = difficulty;
         if (getString(R.string.easy_text).equals(difficulty)) {
             this.difficulty = EasyBoardFragment.TAG;
-            getGameBoard(EasyBoardFragment.TAG);
         } else if (getString(R.string.medium_text).equals(difficulty)) {
             this.difficulty = MediumBoardFragment.TAG;
-            getGameBoard(MediumBoardFragment.TAG);
         } else if (getString(R.string.hard_text).equals(difficulty)) {
             this.difficulty = HardBoardFragment.TAG;
-            getGameBoard(HardBoardFragment.TAG);
         } else {
-            //handle this, dunno if it can happen, but handle it
+            this.difficulty = EasyBoardFragment.TAG;
         }
+        getGameBoard(this.difficulty);
+    }
+
+    public void showEndGameNavDialog(String time) {
+        EndGameNavDialog navDialog = EndGameNavDialog.newInstance(time);
+        navDialog.show(getSupportFragmentManager(), EndGameNavDialog.TAG);
     }
 }

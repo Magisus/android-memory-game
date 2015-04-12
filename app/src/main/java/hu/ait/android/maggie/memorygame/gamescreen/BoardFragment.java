@@ -185,8 +185,7 @@ public class BoardFragment extends Fragment {
                 activeCard = null;
                 pairsFound++;
                 if (pairsFound == pairCount) {
-                    timer.stop();
-                    saveNewScore(difficulty);
+                    endGame();
                 }
             } else { //Did not find a pair
                 final Handler handler = new Handler();
@@ -214,5 +213,11 @@ public class BoardFragment extends Fragment {
         Score newScore = new Score(timer.getText().toString(), prefs.getString(SettingsActivity.NAME, "--"),
                 new Date(System.currentTimeMillis()), difficulty);
         newScore.save();
+    }
+
+    private void endGame() {
+        timer.stop();
+        saveNewScore(difficulty);
+        ((GameScreenActivity) getActivity()).showEndGameNavDialog(timer.getText().toString());
     }
 }

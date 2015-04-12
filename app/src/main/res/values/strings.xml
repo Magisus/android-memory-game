@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Memory Game</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="game_title">Memory Game</string>
     <string name="new_game">New Game</string>
@@ -41,4 +39,7 @@
     <string name="hs_clear_dialog_title">Choose scores to clear:</string>
     <string name="clear_button">Clear</string>
     <string name="cancel_btn">Cancel</string>
+    <string name="play_again">Play Again</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="change_usr_btn">Change User</string>
 </resources>

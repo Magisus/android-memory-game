@@ -30,7 +30,8 @@
         <activity
             android:name=".gamescreen.GameScreenActivity"
             android:label="@string/title_activity_game_screen"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:noHistory="true">
         </activity>
         <activity
             android:name=".settings.SettingsActivity"
